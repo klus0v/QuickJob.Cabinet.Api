@@ -21,5 +21,5 @@ public class EmailController : ControllerBase
 
     [HttpPost]
     public async Task ConfirmUserEmail(ConfirmEmailRequest request) => 
-        await factorsManager.ConfirmSetUserEmail(request.Code);
+        await factorsManager.ConfirmSetUserEmail(request.Email, request.Code);
 }

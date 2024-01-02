@@ -4,7 +4,9 @@ public class ServiceSettings
 {
     public List<string> Origins { get; set; }
     public string UsersApiKey { get; set; }
+    public string NotificationsApiKey { get; set; }
     public string UsersApiBaseUrl { get; set; }
+    public string NotificationsApiBaseUrl { get; set; }
     public string FrontRegisterUrl { get; set; }
     public KeycloackSettings KeycloackSettings { get; set; }
     
