@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AWSSDK.S3" Version="3.7.304.7" />
+        <PackageReference Include="QuickJob.Users.Client" Version="1.1.1" />
+        <PackageReference Include="Vostok.Configuration" Version="0.1.42" />
+        <PackageReference Include="Vostok.Configuration.Abstractions" Version="0.1.15" />
+        <PackageReference Include="Vostok.Configuration.Sources.Json" Version="0.1.6" />
+        <PackageReference Include="Vostok.Logging.Console" Version="1.0.9" />
+        <PackageReference Include="Vostok.Logging.File" Version="1.0.22" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\QuickJob.Cabinet.DataModel\QuickJob.Cabinet.DataModel.csproj" />
+    </ItemGroup>
+
+</Project>

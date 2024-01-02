@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickJob.Cabinet.Api", "QuickJob.Cabinet.Api\QuickJob.Cabinet.Api.csproj", "{0BFA95AD-52A8-4F15-AF8A-F3CCD9F57DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickJob.Cabinet.DataModel", "QuickJob.Cabinet.DataModel\QuickJob.Cabinet.DataModel.csproj", "{371A3083-F562-4EC6-A5E5-38C0FA0A7673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickJob.Cabinet.BusinessLogic", "QuickJob.Cabinet.BusinessLogic\QuickJob.Cabinet.BusinessLogic.csproj", "{0A4AF41E-EF34-4EAF-BBE5-03C7910B0D1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BFA95AD-52A8-4F15-AF8A-F3CCD9F57DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFA95AD-52A8-4F15-AF8A-F3CCD9F57DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFA95AD-52A8-4F15-AF8A-F3CCD9F57DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFA95AD-52A8-4F15-AF8A-F3CCD9F57DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371A3083-F562-4EC6-A5E5-38C0FA0A7673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371A3083-F562-4EC6-A5E5-38C0FA0A7673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371A3083-F562-4EC6-A5E5-38C0FA0A7673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371A3083-F562-4EC6-A5E5-38C0FA0A7673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4AF41E-EF34-4EAF-BBE5-03C7910B0D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4AF41E-EF34-4EAF-BBE5-03C7910B0D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4AF41E-EF34-4EAF-BBE5-03C7910B0D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4AF41E-EF34-4EAF-BBE5-03C7910B0D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
