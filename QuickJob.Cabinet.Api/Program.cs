@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using QuickJob.Cabinet.Api.DI;
 
 var builder = WebApplication.CreateBuilder(args);
