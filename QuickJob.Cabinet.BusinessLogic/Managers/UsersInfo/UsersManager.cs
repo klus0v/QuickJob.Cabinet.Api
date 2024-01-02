@@ -1,6 +1,6 @@
 using QuickJob.Cabinet.BusinessLogic.Mappers;
 using QuickJob.Cabinet.BusinessLogic.Services.Users;
-using QuickJob.Cabinet.DataModel.API.Requests;
+using QuickJob.Cabinet.DataModel.API.Requests.Info;
 using QuickJob.Cabinet.DataModel.API.Responses;
 using QuickJob.Cabinet.DataModel.Context;
 

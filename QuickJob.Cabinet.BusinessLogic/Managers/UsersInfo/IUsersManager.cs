@@ -1,4 +1,4 @@
-using QuickJob.Cabinet.DataModel.API.Requests;
+using QuickJob.Cabinet.DataModel.API.Requests.Info;
 using QuickJob.Cabinet.DataModel.API.Responses;
 
 namespace QuickJob.Cabinet.BusinessLogic.Managers.UsersInfo;

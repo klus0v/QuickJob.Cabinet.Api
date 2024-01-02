@@ -1,4 +1,4 @@
-namespace QuickJob.Cabinet.DataModel.API.Requests;
+namespace QuickJob.Cabinet.DataModel.API.Requests.Info;
 
 public class SetBaseInfoRequest : SetInfoRequest
 {

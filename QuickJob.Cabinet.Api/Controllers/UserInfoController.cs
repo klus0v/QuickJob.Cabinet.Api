@@ -1,10 +1,8 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuickJob.Cabinet.Api.Validation.Attributes;
 using QuickJob.Cabinet.BusinessLogic.Managers.UsersInfo;
-using QuickJob.Cabinet.DataModel.API.Requests;
+using QuickJob.Cabinet.DataModel.API.Requests.Info;
 
 namespace QuickJob.Cabinet.Api.Controllers;
 

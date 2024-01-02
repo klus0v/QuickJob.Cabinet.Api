@@ -1,5 +1,5 @@
 using FS.Keycloak.RestApiClient.Model;
-using QuickJob.Cabinet.DataModel.API.Requests;
+using QuickJob.Cabinet.DataModel.API.Requests.Info;
 using QuickJob.Cabinet.DataModel.API.Responses;
 using QuickJob.Cabinet.DataModel.ServerDataModel;
 using QuickJob.Cabinet.DataModel.ServerDataModel.Constants;

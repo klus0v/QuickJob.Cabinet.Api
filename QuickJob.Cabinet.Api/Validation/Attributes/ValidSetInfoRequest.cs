@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using QuickJob.Cabinet.DataModel.API.Requests;
+using QuickJob.Cabinet.DataModel.API.Requests.Info;
 using QuickJob.Cabinet.DataModel.ServerDataModel.Constants;
 
 namespace QuickJob.Cabinet.Api.Validation.Attributes;
