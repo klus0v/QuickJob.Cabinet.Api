@@ -8,6 +8,7 @@
     
     <ItemGroup>
         <PackageReference Include="QuickJob.Users.Client" Version="1.1.1" />
+        <PackageReference Include="QuickJob.Notifications.Client " Version="1.0.0" />
         <PackageReference Include="Vostok.Context" Version="0.1.7" />
         <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
     </ItemGroup>

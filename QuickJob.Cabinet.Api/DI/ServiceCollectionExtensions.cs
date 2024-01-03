@@ -1,15 +1,15 @@
-﻿using System.Linq;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using QuickJob.Cabinet.Api.Middlewares;
 using QuickJob.Cabinet.BusinessLogic.Managers.Avatars;
+using QuickJob.Cabinet.BusinessLogic.Managers.Factors;
 using QuickJob.Cabinet.BusinessLogic.Managers.UsersInfo;
+using QuickJob.Cabinet.BusinessLogic.Services.Notifications;
 using QuickJob.Cabinet.BusinessLogic.Services.S3;
 using QuickJob.Cabinet.BusinessLogic.Services.Users;
 using QuickJob.Cabinet.DataModel.Configuration;
+using QuickJob.Notifications.Client;
 using QuickJob.Users.Client;
 using Vostok.Configuration.Sources.Json;
 using Vostok.Logging.Abstractions;
@@ -91,8 +91,10 @@ internal static class ServiceCollectionExtensions
         .AddDistributedMemoryCache()
         .AddSingleton<IAvatarsManager, AvatarsManager>()
         .AddSingleton<IUsersManager, UsersManager>()
+        .AddSingleton<IFactorsManager, FactorsManager>()
         .AddSingleton<IS3Storage, AWSStorage>()
-        .AddSingleton<IUsersService, UsersService>();
+        .AddSingleton<IUsersService, UsersService>()
+        .AddSingleton<INotificationsService, NotificationsService>();
 
     public static void AddExternalServices(this IServiceCollection services)
     {
@@ -104,6 +106,9 @@ internal static class ServiceCollectionExtensions
         services
             .AddSingleton<UsersClientFactory>()
             .TryAddSingleton<IQuickJobUsersClient>(x => x.GetRequiredService<UsersClientFactory>().GetClient());
+        services
+            .AddSingleton<NotificationsClientFactory>()
+            .TryAddSingleton<IQuickJobNotificationsClient>(x => x.GetRequiredService<NotificationsClientFactory>().GetClient());
     }
     
     public static void AddAuthMiddleware(this IServiceCollection services) =>

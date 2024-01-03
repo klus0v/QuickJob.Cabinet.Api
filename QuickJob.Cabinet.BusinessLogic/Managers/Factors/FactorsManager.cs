@@ -5,7 +5,7 @@ using QuickJob.Cabinet.BusinessLogic.Services.Notifications;
 using QuickJob.Cabinet.BusinessLogic.Services.Users;
 using QuickJob.Cabinet.DataModel.Context;
 using QuickJob.Cabinet.DataModel.Exceptions;
-using QuickJob.Cabinet.DataModel.ServerDataModel.Constants;
+using QuickJob.Notifications.Client.Constants;
 
 namespace QuickJob.Cabinet.BusinessLogic.Managers.Factors;
 
@@ -32,7 +32,7 @@ public sealed class FactorsManager : IFactorsManager
         await usersService.PatchById(userId, user);
 
         var emailVariables = new Dictionary<string, string> { { "code", code } };
-        await notificationsService.SendEmail(email, emailVariables, NotificationsConstants.SetEmailTemplateId);
+        await notificationsService.SendEmail(email, emailVariables, NtfConstants.EmailConfirmTemplate);
     }
 
     public async Task ConfirmSetUserEmail(string email, string code)

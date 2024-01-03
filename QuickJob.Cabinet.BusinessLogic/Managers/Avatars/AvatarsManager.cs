@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Http;
-using QuickJob.Cabinet.BusinessLogic.Extensions;
 using QuickJob.Cabinet.BusinessLogic.Mappers;
 using QuickJob.Cabinet.BusinessLogic.Services.S3;
 using QuickJob.Cabinet.BusinessLogic.Services.Users;
