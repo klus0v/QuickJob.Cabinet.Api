@@ -20,7 +20,7 @@ public static class UserRepresentationExtensions
     #endregion
 
     public static string? GetAttributeOrNull(this UserRepresentation user, string key) => 
-        user.Attributes?.FirstOrDefault(x => x.Key == key).Value.FirstOrDefault();
+        user.Attributes?.FirstOrDefault(x => x.Key == key).Value?.FirstOrDefault();
 
     public static List<string>? GetAttributesOrNull(this UserRepresentation user, string key) =>
         user.Attributes?.FirstOrDefault(x => x.Key == key).Value;
