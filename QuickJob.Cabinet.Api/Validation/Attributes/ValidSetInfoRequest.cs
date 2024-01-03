@@ -6,7 +6,7 @@ namespace QuickJob.Cabinet.Api.Validation.Attributes;
 
 public class ValidSetInfoRequest : ValidationAttribute
 {
-    private readonly List<string> NotAllowedDeletes = new()
+    private readonly HashSet<string> NotAllowedDeletes = new()
     {
         KeycloackConstants.TgId, KeycloackConstants.TgUsername, KeycloackConstants.Phone, KeycloackConstants.Avatar
     };
@@ -17,8 +17,8 @@ public class ValidSetInfoRequest : ValidationAttribute
         {
             if (setInfoRequest.Deletes is not null && setInfoRequest.Deletes.Count > 0)
             {
-                if (setInfoRequest.Deletes.Union(NotAllowedDeletes).Any())
-                    return new ValidationResult("Deletes contain not allowed values", setInfoRequest.Deletes);
+                if (setInfoRequest.Deletes.Any(x => NotAllowedDeletes.Contains(x)))
+                    return new ValidationResult("Deletes contain not allowed values", setInfoRequest.Deletes.Where(x => NotAllowedDeletes.Contains(x)));
             }
             return ValidationResult.Success;
         }

@@ -15,6 +15,7 @@ public static class UserMapper
             Id = Guid.Parse(user.Id),
             Email = user.Email,
             Fio = user.GetAttributeOrNull(KeycloackConstants.Fio),
+            AvatarUrl = user.GetAttributeOrNull(KeycloackConstants.Avatar),
             Phone = user.GetAttributeOrNull(KeycloackConstants.Phone),
             Address = user.GetAttributeOrNull(KeycloackConstants.Address),
             Telegram = new Telegram(
