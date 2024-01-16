@@ -16,10 +16,16 @@ public class EmailController : ControllerBase
         this.factorsManager = factorsManager;
 
     [HttpPost("request")]
-    public async Task SetUserEmail(SetEmailRequest request) => 
+    public async Task<IActionResult> SetUserEmail(SetEmailRequest request)
+    {
         await factorsManager.InitSetUserEmail(request.Email);
+        return Ok();
+    }
 
     [HttpPost("confirm")]
-    public async Task ConfirmUserEmail(ConfirmEmailRequest request) => 
+    public async Task<IActionResult> ConfirmUserEmail(ConfirmEmailRequest request)
+    {
         await factorsManager.ConfirmSetUserEmail(request.Email, request.Code);
+        return Ok();
+    }
 }

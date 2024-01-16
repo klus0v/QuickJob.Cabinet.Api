@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuickJob.Cabinet.BusinessLogic.Managers.Avatars;
 using QuickJob.Cabinet.DataModel.API.Responses;
@@ -18,10 +16,17 @@ public class AvatarsController : ControllerBase
         this.avatarsManager = avatarsManager;
 
     [HttpPut]
-    public async Task<SetUserAvatarResponse> SetUserAvatar(IFormFile content) => 
-        new(await avatarsManager.SetAvatar(content));
+    [ProducesResponseType(typeof(SetUserAvatarResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> SetUserAvatar(IFormFile content)
+    {
+        var response = new SetUserAvatarResponse(await avatarsManager.SetAvatar(content));
+        return Ok(response);
+    }
 
     [HttpDelete]
-    public async Task DeleteUserAvatar() => 
+    public async Task<IActionResult> DeleteUserAvatar()
+    { 
         await avatarsManager.DeleteAvatar();
+        return Ok();
+    }
 }
