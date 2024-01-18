@@ -17,6 +17,7 @@ public class UserInfoController : ControllerBase
     public UserInfoController(IUsersManager usersManager) => 
         this.usersManager = usersManager;
 
+    [AllowAnonymous]
     [HttpGet("base")]
     [ProducesResponseType(typeof(BaseInfoResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetBaseUserInfo([FromQuery] Guid? userId = null) => 

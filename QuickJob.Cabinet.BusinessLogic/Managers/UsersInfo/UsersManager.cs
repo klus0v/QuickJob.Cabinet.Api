@@ -1,8 +1,10 @@
+using System.Net;
 using QuickJob.Cabinet.BusinessLogic.Mappers;
 using QuickJob.Cabinet.BusinessLogic.Services.Users;
 using QuickJob.Cabinet.DataModel.API.Requests.Info;
 using QuickJob.Cabinet.DataModel.API.Responses;
 using QuickJob.Cabinet.DataModel.Context;
+using QuickJob.Cabinet.DataModel.Exceptions;
 
 namespace QuickJob.Cabinet.BusinessLogic.Managers.UsersInfo;
 
@@ -17,6 +19,9 @@ public sealed class UsersManager : IUsersManager
 
     public async Task<BaseInfoResponse> GetBaseUserInfo(Guid? id = null)
     {
+        if (id is null && !RequestContext.ClientInfo.IsUserAuthenticated)
+            throw new CustomHttpException(HttpStatusCode.NotFound, HttpErrors.NotFound(string.Empty));
+        
         var userId = id ?? RequestContext.ClientInfo.UserId;
         var userRepresentation = await usersService.GetById(userId);
         return userRepresentation.MapToBaseInfo();
